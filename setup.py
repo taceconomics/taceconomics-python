@@ -1,5 +1,4 @@
 import os
-
 from setuptools import find_packages, setup
 
 version_contents = {}
@@ -19,8 +18,7 @@ setup(
         "requests>=2.20",
         "pandas>=1.2.3",
     ],
-    python_requires=">=3.6",
-    packages=find_packages(exclude=["tests", "tests.*"]),
+    packages=["taceconomics"],
     author="TAC ECONOMICS",
     author_email="info@taceconomics.com",
     url="https://github.com/taceconomics/taceconomics-python",
