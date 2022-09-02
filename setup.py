@@ -18,7 +18,7 @@ setup(
         "requests>=2.20",
         "pandas>=1.2.3",
     ],
-    packages=["taceconomics"],
+    packages=["src/taceconomics"],
     author="TAC ECONOMICS",
     author_email="info@taceconomics.com",
     url="https://github.com/taceconomics/taceconomics-python",
