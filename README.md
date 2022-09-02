@@ -11,13 +11,13 @@ For more information please contact info@taceconomics.com
 The installation process varies depending on your python version and system used. However in most cases the following should work:
 
 ```sh
-pip install --upgrade https://github.com/taceconomics/taceconomics-python.git
+pip install --upgrade git+https://github.com/taceconomics/taceconomics-python.git
 ```
 
 Alternatively on some systems python3 may use a different pip executable and may need to be installed via an alternate pip command. For example:
 
 ```sh
-pip3 install --upgrade https://github.com/taceconomics/taceconomics-python.git
+pip3 install --upgrade git+https://github.com/taceconomics/taceconomics-python.git
 ```
 
 # Usage

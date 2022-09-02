@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 version_contents = {}
 version_path = os.path.join(
-    os.path.abspath(os.path.dirname(__file__)), "taceconomics/version.py"
+    os.path.abspath(os.path.dirname(__file__)), "src/taceconomics/version.py"
 )
 
 with open(version_path, "rt") as f:
