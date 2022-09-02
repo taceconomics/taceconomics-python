@@ -1,5 +1,5 @@
 import os
-from setuptools import setup, find_packages, find_namespace_packages
+from setuptools import setup
 
 version_contents = {}
 version_path = os.path.join(
@@ -15,8 +15,8 @@ setup(
     description="Python client library for TAC ECONOMICS API",
     version=version_contents["VERSION"],
     install_requires=["requests", "pandas"],
-    packages=find_namespace_packages(),
     author="TAC ECONOMICS",
     author_email="info@taceconomics.com",
     url="https://github.com/taceconomics/taceconomics-python",
+    packages=["taceconomics"]
 )
