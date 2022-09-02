@@ -26,9 +26,11 @@ The library needs to be configured with your account's secret key which is avail
 
 ```python
 import taceconomics
-taceconomics.api_key = "sk-..."
+
+# you api_key
+taceconomics.api_key = "sk_..."
 
 # get IMF/WEO data
-gdp = taceconomics.get("WEO/GDP/BRA")
+gdp = taceconomics.get("WB/NY.GDP.PCAP.CD/BRA")
 print(gdp)
 ```
