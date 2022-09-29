@@ -57,6 +57,6 @@ def query(symbol, api_key):
 api_key = "sk_..."
 
 # get IMF/WEO data
-gdp = query("WB/NY.GDP.PCAP.CD/BRA")
+gdp = query("WB/NY.GDP.PCAP.CD/BRA", api_key)
 print(gdp)
 ```
