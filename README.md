@@ -48,6 +48,7 @@ def query(symbol, api_key):
     res = requests.get(f"https://api.taceconomics.io/v2/data/{symbol}?api_key={api_key}").json()
     if "data" in res:
         data = pd.json_normalize(res, record_path=['data'])
+        data.timestamp = pd.to_datetime(data['timestamp'])
         data.set_index('timestamp', inplace=True)
         data.columns = [symbol.lower()]
         return data
