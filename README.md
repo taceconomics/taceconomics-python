@@ -50,7 +50,6 @@ def query(symbol, api_key):
         data = pd.json_normalize(res, record_path=['data'])
         data.timestamp = pd.to_datetime(data['timestamp'])
         data.set_index('timestamp', inplace=True)
-        data.columns = [symbol.lower()]
         return data
     return None
 
