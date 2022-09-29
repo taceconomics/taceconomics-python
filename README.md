@@ -34,3 +34,30 @@ taceconomics.api_key = "sk_..."
 gdp = taceconomics.get("WB/NY.GDP.PCAP.CD/BRA")
 print(gdp)
 ```
+
+
+# Direct Query
+
+In case you cannot install TAC ECONOMICS Python library, please use the following code to query our API:
+
+```python
+# --- get World Bank GDP per capita data for Brazil
+import requests
+import pandas as pd
+
+def query(symbol, api_key):
+    res = requests.get(f"https://api.taceconomics.io/v2/data/{symbol}?api_key={api_key}").json()
+    if "data" in res:
+        data = pd.json_normalize(res, record_path=['data'])
+        data.set_index('timestamp', inplace=True)
+        data.columns = [symbol.lower()]
+        return data
+    return None
+
+# you api_key
+api_key = "sk_..."
+
+# get IMF/WEO data
+gdp = query("WB/NY.GDP.PCAP.CD/BRA")
+print(gdp)
+```
