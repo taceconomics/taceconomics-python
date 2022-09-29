@@ -36,12 +36,11 @@ print(gdp)
 ```
 
 
-# Direct Query
+# Direct Queries
 
 In case you cannot install TAC ECONOMICS Python library, please use the following code to query our API:
 
 ```python
-# --- get World Bank GDP per capita data for Brazil
 import requests
 import pandas as pd
 
