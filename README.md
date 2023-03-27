@@ -30,9 +30,9 @@ import taceconomics
 # you api_key
 taceconomics.api_key = "sk_..."
 
-# get IMF/WEO data
-gdp = taceconomics.get("WB/NY.GDP.PCAP.CD/BRA")
-print(gdp)
+# get EIA data
+brent = taceconomics.get("eia/BREPUUS/wld")
+print(brent)
 ```
 
 
@@ -56,7 +56,34 @@ def query(symbol, api_key):
 # you api_key
 api_key = "sk_..."
 
-# get IMF/WEO data
-gdp = query("WB/NY.GDP.PCAP.CD/BRA", api_key)
-print(gdp)
+# get EIA data
+brent = taceconomics.get("eia/BREPUUS/wld")
+print(brent)
+```
+
+# List of all Available path 
+
+you can make a query by using the basic url path(https://api.taceconomics.io/) whith :
+
+PATH | Description |
+|---|---|
+| data/datasets | List all available datasets |
+| data/countries | List all countries |
+| data/regions | List all regions defined |
+| data/dataset_id | List all symbols for the dataset_id |
+| data/dataset_id/symbol/country_id | Get data for the specified symbol and country |
+
+When querying datas, you have a list of defined options :
+
+OPTION | Description | value | 
+|---|---|---|
+| api_key | Set your apikey | Your TACECONOMICS_APIKEY |
+| start_date | Set the starting date of the queried datas | date on format '%YYYY-%MM-%d' |
+| end_date | Set the ending date of the queried datas | date on format '%YYYY-%MM-%d' |
+| frequency | returned frequency of the query | one of 'A','Q','M','D'. Default base frequency of the indicator |
+| agg_mode | aggregation mode if needed | one of 'mean','start_of_period','end_of_period','median'. Default 'mean' |
+
+```python
+brent = taceconomics.get("eia/BREPUUS/wld?start_date=2020&frequency=Q")
+brent
 ```
