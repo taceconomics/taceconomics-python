@@ -30,3 +30,20 @@ def get(code):
         return None
 
     return None
+  
+def getpath(path):
+    headers = HEADERS.copy()
+    headers.update({"Authorization": "Bearer {}".format(taceconomics.api_key)})
+    
+    try:
+        res = requests.get(f"{API}/{path}", headers=headers)
+        if res.status_code == 200:
+          res = res.json()
+          return res
+
+    except Exception as e:
+        print(e)
+        return None
+
+    return None
+ 
