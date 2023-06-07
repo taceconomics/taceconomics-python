@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="taceconomics",
-    version="0.1",
+    version="0.2",
     description="Python client library for TAC ECONOMICS API",
     author="TAC ECONOMICS",
     author_email="info@taceconomics.com",

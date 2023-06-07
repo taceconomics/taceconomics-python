@@ -9,29 +9,8 @@ API     = "https://api.taceconomics.io/v2"
 HEADERS = {'Content-Type': 'application/json', 'Accept':'application/json'}
 
 
-def get(code):
-
-    headers = HEADERS.copy()
-    headers.update({"Authorization": "Bearer {}".format(taceconomics.api_key)})
-    
-    try:
-        res = requests.get(f"{API}/data/{code}", headers=headers)
-        res = res.json()
-        if "errors" in res:
-            return None
-        if "data" in res:
-            df = pd.DataFrame(res["data"])
-            df.set_index('timestamp', inplace=True)
-            df.columns = [code.lower()]
-            return df
-
-    except Exception as e:
-        print(e)
-        return None
-
-    return None
   
-def getpath(path):
+def get(path):
     headers = HEADERS.copy()
     headers.update({"Authorization": "Bearer {}".format(taceconomics.api_key)})
     
@@ -47,3 +26,23 @@ def getpath(path):
 
     return None
  
+
+
+def getdata(code):
+
+    res = get(f"data/{code}")
+       
+    try:
+        if res["data"] is None:
+            return None
+          
+        df = pd.DataFrame(res["data"])
+        df.set_index('timestamp', inplace=True)
+        df.columns = [code.lower()]
+        return df
+
+    except Exception as e:
+        print(e)
+        return None
+
+    return None
