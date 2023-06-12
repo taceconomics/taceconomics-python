@@ -75,4 +75,7 @@ OPTION | Description | value |
 | symbol | list of all symbols containing the specified string | a string ( ex : brent) |
 | dataset | list of all symbols in the specified dataset | a string (ex : weo) |
 | country | list of all symbols available for the specified country | a country ISO 3 code (ex : FRA) |
-
+```python
+taceconomics.get("data/search?q=brent")
+taceconomics.get("data/search?dataset=eia")
+```
