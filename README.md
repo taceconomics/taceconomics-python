@@ -65,6 +65,8 @@ brent
 ```
 You can also search for a specific symbol, dataset, country or list all results for a keywords.
 
+PATH | Description |
+|---|---|
 | data/search | starting path to look for a specific search |
 
 OPTION | Description | value | 
