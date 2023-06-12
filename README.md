@@ -31,35 +31,10 @@ import taceconomics
 taceconomics.api_key = "sk_..."
 
 # get EIA data
-brent = taceconomics.get("eia/BREPUUS/wld")
+brent = taceconomics.getdata("eia/BREPUUS/wld")
 print(brent)
 ```
 
-
-# Direct Queries
-
-In case you cannot install TAC ECONOMICS Python library, please use the following code to query our API:
-
-```python
-import requests
-import pandas as pd
-
-def query(symbol, api_key):
-    res = requests.get(f"https://api.taceconomics.io/v2/data/{symbol}?api_key={api_key}").json()
-    if "data" in res:
-        data = pd.json_normalize(res, record_path=['data'])
-        data.timestamp = pd.to_datetime(data['timestamp'])
-        data.set_index('timestamp', inplace=True)
-        return data
-    return None
-
-# you api_key
-api_key = "sk_..."
-
-# get EIA data
-brent = taceconomics.get("eia/BREPUUS/wld")
-print(brent)
-```
 
 # List of all Available path 
 
@@ -85,6 +60,17 @@ OPTION | Description | value |
 | transform | transformation to apply to the query | one of 'diff','diff_yoy','growth','growth_yoy'|
 
 ```python
-brent = taceconomics.get("eia/BREPUUS/wld?start_date=2020&frequency=Q")
+brent = taceconomics.getdata("eia/BREPUUS/wld?start_date=2020&frequency=Q")
 brent
 ```
+You can also search for a specific symbol, dataset, country or list all results for a keywords.
+
+| data/search | starting path to look for a specific search |
+
+OPTION | Description | value | 
+|---|---|---|
+| q | look for all results containing the specified keyword(s) | a (list of) keyword(s) (ex : brent) |
+| symbol | list of all symbols containing the specified string | a string ( ex : brent) |
+| dataset | list of all symbols in the specified dataset | a string (ex : weo) |
+| country | list of all symbols available for the specified country | a country ISO 3 code (ex : FRA) |
+
