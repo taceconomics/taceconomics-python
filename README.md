@@ -56,7 +56,7 @@ OPTION | Description | value |
 | api_key | Set your apikey | Your TACECONOMICS_APIKEY |
 | start_date | Set the starting date of the queried datas | date on format '%yyyy-%MM-%dd' |
 | end_date | Set the ending date of the queried datas | date on format '%yyyy-%MM-%dd' |
-| collapse | returned frequency of the query | one of 'A','Q','M','D'. Default base frequency of the indicator |
+| collapse | returned frequency of the query | one of 'A','Q','M','W','D'. Default base frequency of the indicator |
 | collapse_mode | aggregation mode if needed | one of 'mean','start_of_period','end_of_period','median'. Default 'mean' |
 | transform | transformation to apply to the query | one of 'diff','diff_yoy','growth','growth_yoy'|
 
