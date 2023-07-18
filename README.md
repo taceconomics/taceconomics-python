@@ -45,6 +45,7 @@ PATH | Description |
 | data/datasets | List all available datasets |
 | data/countries | List all countries |
 | data/regions | List all regions defined |
+| data/currencies | List all currencies defined |
 | data/search | Search options, see bloc search below fo further details |
 | data/dataset_id | List all symbols for the dataset_id |
 | data/dataset_id/symbol/country_id | Get data for the specified symbol and country |
