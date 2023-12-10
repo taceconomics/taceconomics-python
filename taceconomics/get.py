@@ -15,7 +15,7 @@ def get(path):
     headers.update({"Authorization": "Bearer {}".format(taceconomics.api_key)})
     
     try:
-        res = requests.get(f"{API}/{path}", headers=headers)
+        res = requests.get(f"{API}/{path}", headers=headers, proxies={"http": taceconomics.proxy, "https": taceconomics.proxy} if taceconomics.proxy else None)
         if res.status_code == 200:
           res = res.json()
           return res
