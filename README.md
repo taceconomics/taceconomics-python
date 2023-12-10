@@ -35,6 +35,22 @@ brent = taceconomics.getdata("eia/BREPUUS/wld")
 print(brent)
 ```
 
+# Proxy usage
+
+If you need a proxy for network requests, it can be set directly in your code. Before using the library, assign your proxy URL to taceconomics.proxy. This setup ensures that all requests made by the library are routed through the specified proxy server:
+
+```python
+import taceconomics
+
+# you api_key
+taceconomics.api_key = "sk_..."
+# add proxy
+taceconomics.proxy = "http://..."
+
+# get EIA data
+brent = taceconomics.getdata("eia/BREPUUS/wld")
+print(brent)
+```
 
 # List of all Available path 
 
